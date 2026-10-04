@@ -1,3 +1,4 @@
+
 package com.weatherapp.config;
 
 import org.springframework.context.annotation.Bean;
@@ -19,7 +20,8 @@ public class CorsConfig {
                 registry.addMapping("/api/**")
                         .allowedOrigins(
                                 "http://localhost:5173",
-                                "http://localhost:3000"
+                                "http://localhost:3000",
+                                "https://weather-information-app-six.vercel.app"
                         )
                         .allowedMethods(
                                 "GET",
@@ -29,7 +31,8 @@ public class CorsConfig {
                                 "OPTIONS"
                         )
                         .allowedHeaders("*")
-                        .allowCredentials(false);
+                        .allowCredentials(false)
+                        .maxAge(3600);
             }
         };
     }
