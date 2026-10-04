@@ -1,0 +1,212 @@
+
+/* =========================================================
+   BASIC ANIMATIONS
+========================================================= */
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.weather-icon-large {
+  animation: float 4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   IPHONE-STYLE ELASTIC SCROLL
+========================================================= */
+
+:root {
+  --scroll-scale: 1;
+  --scroll-offset-y: 0px;
+}
+
+
+/*
+  IMPORTANT:
+  Apply the scroll effect only to actual dashboard
+  content cards.
+
+  Search results are excluded so they never move,
+  resize, or fall behind the weather cards.
+*/
+
+.dashboard-container
+  .clay-card:not(.search-results) {
+  scale: var(--scroll-scale, 1);
+  translate: 0 var(--scroll-offset-y, 0px);
+
+  /*
+    DO NOT add a long CSS transition here.
+    The JavaScript spring handles the smoothing.
+  */
+
+  will-change: scale, translate;
+
+  transform-origin: center center;
+
+  backface-visibility: hidden;
+
+  /*
+    Helps the browser keep the animation smooth.
+  */
+  -webkit-backface-visibility: hidden;
+}
+
+
+/* =========================================================
+   FORECAST ITEMS
+========================================================= */
+
+.dashboard-container
+  .hour-item,
+.dashboard-container
+  .day-row {
+  scale: var(--scroll-scale, 1);
+  translate: 0 var(--scroll-offset-y, 0px);
+
+  will-change: scale, translate;
+
+  transform-origin: center center;
+
+  backface-visibility: hidden;
+
+  -webkit-backface-visibility: hidden;
+}
+
+
+/* =========================================================
+   KEEP SEARCH AREA STATIC
+========================================================= */
+
+.hero-section {
+  position: relative;
+  z-index: 10000;
+
+  /*
+    Search should never participate in the
+    elastic scroll effect.
+  */
+  scale: 1 !important;
+  translate: none !important;
+
+  will-change: auto;
+}
+
+
+/* =========================================================
+   SEARCH RESULTS MUST NEVER ANIMATE
+========================================================= */
+
+.search-results {
+  scale: 1 !important;
+  translate: none !important;
+  transform: none !important;
+
+  will-change: auto;
+
+  z-index: 99999 !important;
+}
+
+
+/* =========================================================
+   IMPORTANT WEATHER CARDS
+========================================================= */
+
+.dashboard-container
+  .location-card,
+.dashboard-container
+  .current-weather-card,
+.dashboard-container
+  .detail-card,
+.dashboard-container
+  .air-quality-card,
+.dashboard-container
+  .celestial-card,
+.dashboard-container
+  .forecast-card,
+.dashboard-container
+  .chart-card,
+.dashboard-container
+  .alert-card {
+  will-change: scale, translate;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+  .dashboard-container
+    .clay-card:not(.search-results) {
+    scale: var(--scroll-scale, 1);
+    translate: 0 var(--scroll-offset-y, 0px);
+
+    will-change: scale, translate;
+
+    transform-origin: center center;
+  }
+
+  .dashboard-container
+    .hour-item,
+  .dashboard-container
+    .day-row {
+    scale: var(--scroll-scale, 1);
+    translate: 0 var(--scroll-offset-y, 0px);
+
+    will-change: scale, translate;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 480px) {
+  .dashboard-container
+    .clay-card:not(.search-results) {
+    scale: var(--scroll-scale, 1);
+    translate: 0 var(--scroll-offset-y, 0px);
+
+    will-change: scale, translate;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-container
+    .clay-card:not(.search-results),
+  .dashboard-container
+    .hour-item,
+  .dashboard-container
+    .day-row {
+    scale: 1;
+    translate: none;
+    animation: none;
+    transition: none;
+    will-change: auto;
+  }
+
+  .weather-icon-large {
+    animation: none;
+  }
+}

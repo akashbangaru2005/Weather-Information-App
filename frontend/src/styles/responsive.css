@@ -1,0 +1,812 @@
+/* =========================================================
+   TABLET / SMALL DESKTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+  /* ---------------- HERO ---------------- */
+
+  .hero-section {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 24px;
+
+    /*
+      Keep search dropdown visible outside
+      the hero area.
+    */
+    overflow: visible !important;
+  }
+
+  .hero-section > div:first-child {
+    width: 100%;
+  }
+
+  /* ---------------- SEARCH ---------------- */
+
+  .search-area {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .search-wrapper {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .search-results {
+    max-width: 100%;
+  }
+
+  /* ---------------- MAIN GRIDS ---------------- */
+
+  .top-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .sun-moon-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* ---------------- CURRENT WEATHER ---------------- */
+
+  .current-weather-card {
+    min-height: 260px;
+  }
+
+  .current-weather-content {
+    gap: 24px;
+  }
+
+  .temperature {
+    font-size: 68px;
+  }
+
+  /* ---------------- AIR QUALITY ---------------- */
+
+  .pollutant-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* ---------------- DAILY FORECAST ---------------- */
+
+  .day-row {
+    grid-template-columns:
+      1fr
+      55px
+      minmax(160px, 1.4fr)
+      minmax(120px, 1fr);
+
+    gap: 10px;
+  }
+
+  /* ---------------- WIND ---------------- */
+
+  .wind-main {
+    gap: 18px;
+  }
+
+  .compass-ring {
+    width: 92px;
+    height: 92px;
+  }
+
+  /* ---------------- CHART ---------------- */
+
+  .chart {
+    height: 260px;
+  }
+
+  .chart-bars {
+    gap: 7px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+  /* ---------------- PAGE WIDTH ---------------- */
+
+  .app-header,
+  .dashboard-container {
+    width: min(
+      100% - 24px,
+      1400px
+    );
+  }
+
+  .dashboard-container {
+    overflow: visible;
+  }
+
+  /* ---------------- HEADER ---------------- */
+
+  .app-header {
+    padding: 18px 0;
+  }
+
+  .brand-subtitle {
+    display: none;
+  }
+
+  .current-location-pill {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  /* ---------------- HERO ---------------- */
+
+  .hero-section {
+    width: 100%;
+    padding-top: 8px;
+    gap: 20px;
+
+    overflow: visible !important;
+  }
+
+  .hero-section h1 {
+    font-size: 38px;
+    line-height: 1.05;
+  }
+
+  .hero-subtitle {
+    max-width: 90%;
+    font-size: 12px;
+  }
+
+  /* ---------------- SEARCH ---------------- */
+
+  .search-area {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+
+    position: relative;
+    z-index: 10000;
+  }
+
+  .search-wrapper {
+    width: 100%;
+    position: relative;
+    z-index: 10001;
+  }
+
+  .search-box {
+    width: 100%;
+    min-height: 56px;
+  }
+
+  .search-submit,
+  .location-button {
+    min-width: 100px;
+  }
+
+  .location-button {
+    width: 100%;
+  }
+
+  /*
+    Keep dropdown above every dashboard card.
+  */
+  .search-results {
+    position: absolute !important;
+    z-index: 2147483647 !important;
+
+    width: 100%;
+    max-height: 310px;
+
+    scale: 1 !important;
+    translate: none !important;
+    transform: none !important;
+  }
+
+  /* ---------------- ERROR ---------------- */
+
+  .dashboard-container > .clay-card {
+    max-width: 100%;
+  }
+
+  /* ---------------- MAIN GRIDS ---------------- */
+
+  .top-grid,
+  .info-grid,
+  .stats-grid,
+  .sun-moon-grid,
+  .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ---------------- SECTION HEADINGS ---------------- */
+
+  .section-heading {
+    gap: 10px;
+  }
+
+  .section-heading h2 {
+    font-size: 24px;
+  }
+
+  /* ---------------- CURRENT WEATHER ---------------- */
+
+  .location-card,
+  .current-weather-card {
+    min-height: auto;
+  }
+
+  .current-weather-content {
+    align-items: center;
+    gap: 18px;
+  }
+
+  .weather-icon-large {
+    width: 110px;
+    height: 110px;
+    border-radius: 34px;
+    font-size: 56px;
+    flex-shrink: 0;
+  }
+
+  .weather-api-icon {
+    width: 82px;
+    height: 82px;
+  }
+
+  .temperature {
+    font-size: 63px;
+  }
+
+  .temperature span {
+    font-size: 24px;
+  }
+
+  .condition {
+    font-size: 18px;
+  }
+
+  /* ---------------- WEATHER STATS ---------------- */
+
+  .stats-grid {
+    gap: 12px;
+  }
+
+  /* ---------------- AIR QUALITY ---------------- */
+
+  .pollutant-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .aqi-main {
+    gap: 16px;
+  }
+
+  /* ---------------- DAILY FORECAST ---------------- */
+
+  .daily-forecast-list {
+    gap: 9px;
+  }
+
+  .day-row {
+    grid-template-columns:
+      0.8fr
+      55px
+      1.4fr;
+
+    gap: 8px;
+  }
+
+  .day-extra {
+    display: flex;
+
+    grid-column: 1 / -1;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding-top: 7px;
+    border-top: 1px solid var(--border);
+  }
+
+  .day-condition {
+    max-width: 50%;
+    text-align: left;
+  }
+
+  .day-average {
+    margin-left: auto;
+  }
+
+  .day-api-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* ---------------- HOURLY FORECAST ---------------- */
+
+  .hourly-scroll {
+    width: 100%;
+    padding-bottom: 12px;
+
+    /*
+      Native touch scrolling on phones.
+    */
+    touch-action: pan-x;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .hour-api-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hour-item {
+    min-width: 88px;
+    flex-basis: 88px;
+  }
+
+  /* ---------------- WIND ---------------- */
+
+  .wind-main {
+    gap: 10px;
+  }
+
+  .compass-ring {
+    width: 78px;
+    height: 78px;
+  }
+
+  .compass-pointer {
+    height: 29px;
+    transform-origin: center 26px;
+  }
+
+  /* ---------------- PRESSURE ---------------- */
+
+  .pressure-main {
+    gap: 12px;
+  }
+
+  /* ---------------- SUN / MOON ---------------- */
+
+  .celestial-times {
+    gap: 10px;
+  }
+
+  /* ---------------- CHART ---------------- */
+
+  .chart-summary {
+    gap: 6px;
+  }
+
+  .chart-summary div {
+    padding: 9px 7px;
+  }
+
+  .chart-summary strong {
+    font-size: 14px;
+  }
+
+  .chart-bars {
+    gap: 6px;
+  }
+
+  .chart {
+    height: 240px;
+  }
+
+  /* ---------------- FOOTER ---------------- */
+
+  .app-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+
+    text-align: center;
+  }
+
+  /* ---------------- REFRESH ---------------- */
+
+  .dashboard-container .clay-button {
+    max-width: 100%;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 480px) {
+  /* ---------------- PAGE ---------------- */
+
+  .app-header,
+  .dashboard-container {
+    width: calc(100% - 20px);
+  }
+
+  /* ---------------- HEADER ---------------- */
+
+  .brand-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 16px;
+  }
+
+  .brand-name {
+    font-size: 16px;
+  }
+
+  .theme-button {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* ---------------- HERO ---------------- */
+
+  .hero-section {
+    padding-top: 10px;
+    gap: 17px;
+  }
+
+  .hero-section h1 {
+    font-size: 32px;
+  }
+
+  .hero-subtitle {
+    font-size: 11px;
+    max-width: 100%;
+  }
+
+  /* ---------------- SEARCH ---------------- */
+
+  .search-box {
+    min-height: 52px;
+  }
+
+  .search-submit {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .location-button {
+    min-height: 48px;
+  }
+
+  .search-results {
+    max-height: 280px;
+    border-radius: 18px;
+  }
+
+  .search-result-item {
+    padding: 11px 12px;
+    gap: 10px;
+  }
+
+  .result-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 11px;
+  }
+
+  .result-info strong {
+    font-size: 11px;
+  }
+
+  .result-info small {
+    font-size: 8px;
+  }
+
+  /* ---------------- CARDS ---------------- */
+
+  .location-card,
+  .current-weather-card,
+  .detail-card,
+  .air-quality-card,
+  .celestial-card,
+  .chart-card,
+  .alert-card {
+    padding: 20px;
+    border-radius: 23px;
+  }
+
+  /* ---------------- CURRENT WEATHER ---------------- */
+
+  .current-weather-content {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .weather-icon-large {
+    width: 88px;
+    height: 88px;
+    font-size: 44px;
+    border-radius: 28px;
+  }
+
+  .weather-api-icon {
+    width: 68px;
+    height: 68px;
+  }
+
+  .temperature {
+    font-size: 52px;
+  }
+
+  .temperature span {
+    font-size: 21px;
+  }
+
+  .condition {
+    font-size: 16px;
+  }
+
+  .feels-like {
+    font-size: 10px;
+  }
+
+  /* ---------------- STATS ---------------- */
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ---------------- AIR QUALITY ---------------- */
+
+  .pollutant-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .aqi-main {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .aqi-score-wrap {
+    width: auto;
+    min-width: 0;
+    text-align: left;
+  }
+
+  /* ---------------- DAILY ---------------- */
+
+  .temperature-range {
+    gap: 5px;
+  }
+
+  .day-row {
+    grid-template-columns:
+      0.75fr
+      48px
+      1.25fr;
+
+    gap: 6px;
+  }
+
+  .day-weather {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+  }
+
+  .day-api-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .day-name {
+    font-size: 10px;
+  }
+
+  .day-today-badge {
+    display: none;
+  }
+
+  .day-condition {
+    max-width: 45%;
+  }
+
+  /* ---------------- HOURLY ---------------- */
+
+  .hour-item {
+    min-width: 84px;
+    flex-basis: 84px;
+  }
+
+  .hour-api-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  /* ---------------- WIND ---------------- */
+
+  .wind-main {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .compass-ring {
+    width: 72px;
+    height: 72px;
+  }
+
+  .compass-pointer {
+    height: 27px;
+    transform-origin: center 24px;
+  }
+
+  .wind-speed {
+    font-size: 23px;
+  }
+
+  /* ---------------- PRESSURE ---------------- */
+
+  .pressure-main {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pressure-status {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  /* ---------------- SUN / MOON ---------------- */
+
+  .sun-moon-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .celestial-times {
+    gap: 8px;
+  }
+
+  .celestial-time-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 11px;
+    font-size: 14px;
+  }
+
+  .celestial-time-info span {
+    font-size: 7px;
+  }
+
+  .celestial-time-info strong {
+    font-size: 11px;
+  }
+
+  /* ---------------- CHART ---------------- */
+
+  .chart-summary {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .chart-summary div {
+    padding: 8px 6px;
+  }
+
+  .chart-summary strong {
+    font-size: 13px;
+  }
+
+  .chart {
+    height: 220px;
+  }
+
+  .chart-bars {
+    gap: 5px;
+  }
+
+  .chart-bar {
+    width: 18px;
+  }
+
+  /* ---------------- ALERT ---------------- */
+
+  .alert-top-line {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .alert-meta {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  /* ---------------- FOOTER ---------------- */
+
+  .app-footer {
+    font-size: 8px;
+    padding-bottom: 20px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   360px and below
+========================================================= */
+
+@media (max-width: 360px) {
+  .app-header,
+  .dashboard-container {
+    width: calc(100% - 16px);
+  }
+
+  .hero-section h1 {
+    font-size: 29px;
+  }
+
+  .temperature {
+    font-size: 46px;
+  }
+
+  .temperature span {
+    font-size: 18px;
+  }
+
+  .weather-icon-large {
+    width: 78px;
+    height: 78px;
+    border-radius: 24px;
+  }
+
+  .weather-api-icon {
+    width: 61px;
+    height: 61px;
+  }
+
+  .current-weather-content {
+    gap: 9px;
+  }
+
+  .pollutant-grid {
+    gap: 7px;
+  }
+
+  .day-row {
+    grid-template-columns:
+      0.7fr
+      44px
+      1.3fr;
+  }
+
+  .hour-item {
+    min-width: 80px;
+    flex-basis: 80px;
+  }
+
+  .compass-ring {
+    width: 66px;
+    height: 66px;
+  }
+
+  .wind-speed {
+    font-size: 20px;
+  }
+}
